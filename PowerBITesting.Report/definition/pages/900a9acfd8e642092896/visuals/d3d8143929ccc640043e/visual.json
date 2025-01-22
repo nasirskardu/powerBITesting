@@ -5,8 +5,8 @@
     "x": 392.94832826747722,
     "y": 101.15501519756839,
     "z": 0,
-    "height": 331.67173252279639,
-    "width": 320.97264437689972
+    "height": 459.08814589665656,
+    "width": 441.580547112462
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -36,6 +36,21 @@
           ]
         }
       }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'My Amount'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }
