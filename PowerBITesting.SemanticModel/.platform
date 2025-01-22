@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "PowerBITesting"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6739e16a-0b1a-401c-86e3-7186448c9cc8"
+  }
+}

@@ -1,0 +1,55 @@
+table Sales
+	lineageTag: e77c7e87-d6fd-4f4f-8f19-f68e2e0447d0
+
+	column Region
+		dataType: string
+		lineageTag: 61deb702-d797-485e-a125-ee3eb6afb2c0
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: b364f0c0-5c40-4abf-8fd3-94fabb2fe00e
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Province
+		dataType: string
+		lineageTag: f3e61aeb-2235-4944-9617-0b752f8a7261
+		summarizeBy: none
+		sourceColumn: Province
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 4157401d-f9e4-459c-9d91-18719fe9ab37
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: int64
+		formatString: 0
+		lineageTag: f02aecdd-516f-4add-8a04-89b82cc27049
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sales = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("hZNdUttADMev4skzmck0MUkfnQwNpSlQTMsDw4NiK/YWR2LkXWg4RC/BFXqDXKyrtUNLmqRPK63/v9Wnb287SW2gc9T5SHk4P0MJAnVpJXhuOQfjjbjX69wd/aP+BEJg4V7tMVABFQt6exC/kU9KQ3pOndfkTMXGfi7ZeXvY2ykfo/lugviPddxKT5zwg4aaoiyBViGBR5CmCEcmKzXteK/6FOtabz4I0P3CiVX5uy25fszUWP+ssJtj9/Xi0oeqNZ+9SOIeUQrC7lW5/uWPpHpAJWYrJm3RqAHPWWwZJUsUk2nuX9NEWwCVWbBQKGfGdZRQgVXgR71D4DX+AFWdsqttCDSMd+snQJCrcUHWF8MKszBZ/msie6EvDueYaa89IQiV9qItKWX3BhoLPBsVpOsXji7BVbztDHr/Qa8MRzlGZ0BohHdd9N/vfiKRAsm2G+WQtJlGQiu33EE7y2TRou1TG3cKzmLYwjMugQjruRN1+/Fh8AZri0LRBMKK6BFd85NOp3+8hZ6bApstnkHhk0stWNx4CvQb4CJDaNYj8ZMWvy+BxqeoCX4Dzbqkq5xQF344OgR+M5nl9u/Bas5OSKMONb273w==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Region = _t, Country = _t, Province = _t, City = _t, Amount = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Region", type text}, {"Country", type text}, {"Province", type text}, {"City", type text}, {"Amount", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

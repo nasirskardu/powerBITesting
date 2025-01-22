@@ -1,0 +1,20 @@
+model Model
+	culture: en-NZ
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-NZ
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Sales"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.138.1203.0 (24.11)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Sales
+
+ref cultureInfo en-NZ
+
