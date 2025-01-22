@@ -44,7 +44,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'My Amount - main'"
+                  "Value": "'My Amount - feature'"
                 }
               }
             }
